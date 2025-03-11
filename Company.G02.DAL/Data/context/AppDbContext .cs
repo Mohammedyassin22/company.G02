@@ -9,17 +9,14 @@ using System.Threading.Tasks;
 
 namespace Company.G02.DAL.Data.context
 {
-    public class context:DbContext
+    public class AppDbContext : DbContext
     {
-        public context() : base() { }
+        public AppDbContext(DbContextOptions<AppDbContext> option) : base(option) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=;Database=YOUR_DATABASE_NAME;Trusted_Connection=True;TrustedServerCertificate=True");
-        }
+      
         public DbSet<Department> dept {  get; set; }
     }
 }

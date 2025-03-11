@@ -12,10 +12,10 @@ namespace Company.G02.BLL
 {
     public class deptReposit : Interface1
     {
-        private readonly context _context;
-        public deptReposit()
+        private readonly AppDbContext _context;
+        public deptReposit(AppDbContext con)
         {
-            _context=new context();
+            _context = con;
         }
         
         public int Add(Department model)
