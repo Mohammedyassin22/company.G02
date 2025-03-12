@@ -1,3 +1,7 @@
+using company.G02.pl.Controllers;
+using Company.G02.BLL;
+using Company.G02.DAL.Data.context;
+using Microsoft.EntityFrameworkCore;
 namespace company.G02.pl
 {
     public class Program
@@ -8,6 +12,9 @@ namespace company.G02.pl
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<deptReposit>();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
