@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Company.G02.BLL\Company.G02.BLL.csproj" />
+    <ProjectReference Include="..\Company.G02.DAL\Company.G02.DAL.csproj" />
   </ItemGroup>
 
 </Project>
