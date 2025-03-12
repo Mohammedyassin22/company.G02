@@ -1,0 +1,31 @@
+﻿@model CreateDeptDto
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Department</h1>
+<br />
+<br />
+<from>
+    <div class="my-3">
+        <label asp-for="code" class="col-form-label"></label>
+        <input asp-action="code" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="name" class="col-form-label"></label>
+        <input asp-action="name" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="createat" class="col-form-label"></label>
+        <input asp-action="createat" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+</from>
+<div class="my-3">
+    <input type="submit" value="create" class="btn btn-danger"/>
+    <a asp-action="index" class="btn btn-primary">Back to list</a>
+</div>
